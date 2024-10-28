@@ -2,13 +2,8 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        const connection = await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 5000,
-            socketTimeoutMS: 45000,
-        })
-        console.log('MongoDB connected');
+        const connex = await mongoose.connect(process.env.MONGO_URI, {})
+        console.log('MongoDB connected: ', connex.connection.host);
 
         //Manejo de eventos de conexión
         mongoose.connection.on('connected', () => {
@@ -21,6 +16,13 @@ const connectDB = async () => {
 
         mongoose.connection.on('disconnected', () => {
             console.log('Mongoose connection disconnected');
+        });
+
+
+        //Cerrar la conexión con la base de datos
+        process.on('SIGINT', async () => {
+            await mongoose.connection.close();
+            process.exit(0);
         });
 
 
