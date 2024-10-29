@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 //Esquema de usuario
-const userSchecma = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     id: {
         type: Number,
         required: true,
@@ -73,7 +73,7 @@ const userSchecma = new mongoose.Schema({
     
     Funcionamiento de middleware como uso del previo; userSchema.pre
     */
-userSchecma.pre('save', async function(next){
+userSchema.pre('save', async function(next){
     //Si la contraseña no ha sido modificada, continuar
     if(!this.isModified('password')){
         next();
@@ -95,7 +95,7 @@ userSchecma.pre('save', async function(next){
     dentro de este esquema */
 
 //Método para comparar contraseñas
-userSchecma.methods.comparePassword = async function(receivedPassword){
+userSchema.methods.comparePassword = async function(receivedPassword){
    try {
        return await bcrypt.compare(receivedPassword, this.password);
    } catch (error) {
@@ -104,7 +104,7 @@ userSchecma.methods.comparePassword = async function(receivedPassword){
 }
 
 //Método para obtener la información pública del usuario
-userSchecma.methods.toPublicJSON = function() {
+userSchema.methods.toPublicJSON = function() {
     return {
         id: this.id,
         name: this.name,
@@ -121,10 +121,10 @@ userSchecma.methods.toPublicJSON = function() {
 };
 
 // Método estático para generar el siguiente ID
-userSchecma.statics.generateNextId = async function() {
+userSchema.statics.generateNextId = async function() {
     const lastUser = await this.findOne().sort('-id');
     return lastUser ? lastUser.id + 1 : 1;
 };
 
 //Exportar el modelo
-module.exports = mongoose.model('User', userSchecma);
+module.exports = mongoose.model('User', userSchema);
