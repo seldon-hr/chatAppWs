@@ -93,7 +93,7 @@ userSchecma.methods.comparePassword = async function(receivedPassword){
 }
 
 //Método para obtener la información pública del usuario
-userSchema.methods.toPublicJSON = function() {
+userSchecma.methods.toPublicJSON = function() {
     return {
         id: this.id,
         name: this.name,
@@ -110,7 +110,7 @@ userSchema.methods.toPublicJSON = function() {
 };
 
 // Método estático para generar el siguiente ID
-userSchema.statics.generateNextId = async function() {
+userSchecma.statics.generateNextId = async function() {
     const lastUser = await this.findOne().sort('-id');
     return lastUser ? lastUser.id + 1 : 1;
 };
