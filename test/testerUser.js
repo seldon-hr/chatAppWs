@@ -10,6 +10,8 @@ const testUser = async () => {
         console.log('✅ Conectado a MongoDB');
 
         //Incrementar el id
+        /* Todos los métodos que se emplean después de User, o de una instancia de esta
+            puenden ser empleaos, así como este ejemplo. */
         const nextId = await User.generateNextId();
 
         //Crear un nuevo usuario

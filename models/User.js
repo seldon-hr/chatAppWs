@@ -67,6 +67,12 @@ const userSchecma = new mongoose.Schema({
 });
 
 //Encriptar contraseña antes de guardar: Middleware
+/* Dentro del siguiente especificamos que antes de ejecutar el método 'save'
+    de mongoose, es ncesariaio realizar un cambio, aquí se refiere a la 
+    encriptación de la contraseña.
+    
+    Funcionamiento de middleware como uso del previo; userSchema.pre
+    */
 userSchecma.pre('save', async function(next){
     //Si la contraseña no ha sido modificada, continuar
     if(!this.isModified('password')){
@@ -82,6 +88,11 @@ userSchecma.pre('save', async function(next){
         next(error);
     }
 });
+
+
+/* Ahora bien, dentro de esta misma schema que usamos, podemos ver como es que
+    el uso de mehtods o staticts son empleados para hacer funciones que podemos llamar
+    dentro de este esquema */
 
 //Método para comparar contraseñas
 userSchecma.methods.comparePassword = async function(receivedPassword){
