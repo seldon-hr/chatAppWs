@@ -14,6 +14,12 @@ exports.login = async (request, response) => {
         }
 
         //Buscar el usuario en la base de datos
+        /* .select('+password'):
+
+        .select es un método de Mongoose que se utiliza para especificar qué campos deben ser incluidos o excluidos en el resultado de la consulta.
+        '+password' indica que el campo password debe ser incluido en el resultado, incluso si está marcado como select: false en el esquema del modelo.
+        En Mongoose, los campos pueden ser excluidos por defecto en el esquema del modelo usando select: false. 
+        Esto es útil para campos sensibles como contraseñas, que no deberían ser devueltos por defecto en las consultas. */
         const user = await User.findOne({ username }).select('+password');
 
         //Validar que el usuario exista
@@ -63,6 +69,7 @@ exports.login = async (request, response) => {
 exports.logout = async (request, response) => {
     try {
         const user = await User.findById(request.user._id);
+        console.log(request.user._id);
 
         //En caso de que el usuario no exista
         if (!user) {
