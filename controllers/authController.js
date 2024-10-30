@@ -62,14 +62,20 @@ exports.login = async (request, response) => {
 /* LogOut */
 exports.logout = async (request, response) => {
     try {
-        const user = await User.findById(request.user.id);
+        const user = await User.findById(request.user._id);
+
+        //En caso de que el usuario no exista
+        if (!user) {
+            return response.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado',
+            });
+        }
 
         //Actualizar el estado del usuario
-        if (user) {
-            user.isOnline = false;
-            user.lastSeen = new Date();
-            await user.save();
-        }
+        user.isOnline = false;
+        user.lastSeen = new Date();
+        await user.save();
 
         response.status(200).json({
             success: true,
