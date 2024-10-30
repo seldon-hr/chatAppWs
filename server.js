@@ -2,11 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/database');
-const { status } = require('express/lib/response');
 
-/* Rutas y errorHandler */
-/* const routes = require('../routes/')
-const errorHandler = require('../middlewares/errorHandler') */
 
 //Configuración de variables de entorno
 dotenv.config();
@@ -14,29 +10,24 @@ dotenv.config();
 //Iniciar app de express
 const app = express();
 
-
 //Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 //Connect to database
 connectDB();
 
 //Routes
-app.get('/', (req, res) => {
-    res.json({ message:'Chat App Ws is running',  status: "success" });
-});
+app.use('/api/auth', require('./routes/auth.routes'));
 
 //Manejo de errores globales
-app.use((err, req, res, next) => {
-    console.error(err.stack);
+app.use((error, req, res, next) => {
+    console.error(error.stack);
     res.status(500).json({
         success: false,
-        message: err.message || 'Server Error',
-        status: process.env.NODE_ENV === 'development' ? err : {},
+        message: error.message || 'Server Error',
+        status: process.env.NODE_ENV === 'development' ? error : {},
     });
 });
 
