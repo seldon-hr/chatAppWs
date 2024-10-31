@@ -7,6 +7,7 @@ exports.getUserById = async (request, response) => {
         const { _id } = request.body;
         console.log('_id: ' + _id);
         //Buscar el usuario en la base de datos
+        //TODO: Se tiene que hacer la consulta a la capa de repositorio
         const user = await User.findById({ _id });
         /* 
         En el siguiente ejemplo consiste en devolver por id, como en 
