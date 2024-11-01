@@ -5,7 +5,6 @@ const User = require('../models/User');
 exports.login = async (request, response) => {
     try {
         const { username, password } = request.body;
-
         //Validar que se proporcionen usuario y contraseña
         if (!username || !password) {
             return response.status(400).json({

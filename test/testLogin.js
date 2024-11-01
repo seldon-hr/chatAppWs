@@ -35,6 +35,7 @@ const testLogin = async () => {
             username: 'mattWalker',
             password: 'mattWalker789'
         });
+        
 
         console.log('✅ Login exitoso');
         console.log('Token:', loginResponse.data.token);
