@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 const dotenv = require('dotenv');
 
+/* Lectura y carga de las variables al 'process.env'  */
 dotenv.config();
+console.log(dotenv.config());
+
 
 const testUser = async () => {
     try {
@@ -17,9 +20,9 @@ const testUser = async () => {
         //Crear un nuevo usuario
         const userPrototype = {
             id: nextId,
-            name: "Matthew Walker",
-            username: "mattWalker",
-            password: "mattWalker789",
+            name: "Juan Rosales",
+            username: "juan",
+            password: "juan123·9dl",
             email: "matt.walker@berkeley.edu",
             address: {
                 street: "Center for Human Sleep Science",
@@ -49,7 +52,7 @@ const testUser = async () => {
         console.log('Password encriptado:', userWithPassword.password);
 
         //Corroborar la compración de contraseñas 
-        const isMatch = await userWithPassword.comparePassword('mattWalker789');
+        const isMatch = await userWithPassword.comparePassword('juan123·9dl');
         console.log('Password match:', isMatch);
 
         //Limpiar
