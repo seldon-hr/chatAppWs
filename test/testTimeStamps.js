@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
  });
 
 const User = mongoose.model('TestUser', userSchema); 
-
+console.log('process.env.MONGO_URI:', process);
 const testTimestamps = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
