@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-dotenv.config();
-
+dotenv.config({ path: '../.env' });
+console.log(dotenv.config());
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
  });
 
 const User = mongoose.model('TestUser', userSchema); 
-console.log('process.env.MONGO_URI:', process);
+console.log('process.env.MONGO_URI:', process.env.MONGO_URI);
 const testTimestamps = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
