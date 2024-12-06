@@ -45,6 +45,7 @@ const testLogin = async () => {
         await saveToken(loginResponse.data);
         
     } catch (error) {
+        /* console.log(error.response); */
         console.error('❌ Error en login:', error.response ? error.response.data : error.message);
     }
 };

@@ -37,9 +37,9 @@ const testUser = async () => {
             phone: "1-510-555-0123",
             website: "sleepdiplomat.com",
             company: {
-            name: "UC Berkeley",
-            catchPhrase: "Unlocking the science of sleep",
-            bs: "research sleep patterns and cognitive function"
+                name: "UC Berkeley",
+                catchPhrase: "Unlocking the science of sleep",
+                bs: "research sleep patterns and cognitive function"
             }
         };
 
