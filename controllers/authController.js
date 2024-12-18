@@ -21,7 +21,7 @@ exports.login = async (request, response) => {
         En Mongoose, los campos pueden ser excluidos por defecto en el esquema del modelo usando select: false. 
         Esto es útil para campos sensibles como contraseñas, que no deberían ser devueltos por defecto en las consultas. */
         const user = await User.findOne({ username }).select('+password');
-        console.log(user);
+        console.log('Respuesta de base al buscar user',user);
         //Validar que el usuario exista
         if (!user) {
             return response.status(401).json({
