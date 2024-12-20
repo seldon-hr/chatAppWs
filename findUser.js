@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 
 /* Lectura y carga de las variables al 'process.env'  */
 dotenv.config({ path: '../.env'});
-console.log(dotenv.config());
+/* console.log(dotenv.config()); */
 
 const findUserByUsername = async (username) => {
     try {
