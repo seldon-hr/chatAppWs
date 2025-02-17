@@ -32,8 +32,8 @@ const testLogin = async () => {
         console.log('🚀 Iniciando prueba de login...\n');
 
         const loginResponse = await axios.post(`${API_URL}/auth/login`, {
-            username: 'mattWalker',
-            password: 'mattWalker789'
+            username: 'mattwalker',
+            password: 'mattWalker'
         });
         
 

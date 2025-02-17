@@ -3,8 +3,8 @@ const User = require('../models/User');
 const dotenv = require('dotenv');
 
 /* Lectura y carga de las variables al 'process.env'  */
-dotenv.config({ path: '../.env'});
-console.log(dotenv.config());
+dotenv.config({ path: './.env'});
+/* console.log(dotenv.config()); */
 
 
 const testUser = async () => {
@@ -20,9 +20,9 @@ const testUser = async () => {
         //Crear un nuevo usuario
         const userPrototype = {
             id: nextId,
-            name: "Juan Rosales",
-            username: "juan",
-            password: "juan123·9dl",
+            name: "Matt Walker",
+            username: "mattwalker",
+            password: "mattWalker",
             email: "matt.walker@berkeley.edu",
             address: {
                 street: "Center for Human Sleep Science",
@@ -52,12 +52,12 @@ const testUser = async () => {
         console.log('Password encriptado:', userWithPassword.password);
 
         //Corroborar la compración de contraseñas 
-        const isMatch = await userWithPassword.comparePassword('juan123·9dl');
+        const isMatch = await userWithPassword.comparePassword('mattWalker');
         console.log('Password match:', isMatch);
 
         //Limpiar
-        await User.deleteOne({ _id: user._id });
-        console.log('\n🧹 Usuario de prueba eliminado');
+        /* await User.deleteOne({ _id: user._id });
+        console.log('\n🧹 Usuario de prueba eliminado'); */
 
 
     } catch (error) {
