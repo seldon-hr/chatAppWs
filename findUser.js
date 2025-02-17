@@ -22,7 +22,7 @@ const findUserByUsername = async (username) => {
     } catch (error)  {
         console.log('Error:', error);
     } finally {
-        await mongoose.connection.close();ongoose.connection.close();
+        await mongoose.connection.close();
         console.log('\n👋 Conexión cerrada');
     }
 };
