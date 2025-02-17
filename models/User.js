@@ -91,7 +91,7 @@ userSchema.pre('save', async function(next){
 
 
 /* Ahora bien, dentro de esta misma schema que usamos, podemos ver como es que
-    el uso de mehtods o staticts son empleados para hacer funciones que podemos llamar
+    el uso de methods o staticts son empleados para hacer funciones que podemos llamar
     dentro de este esquema */
 
 //Método para comparar contraseñas

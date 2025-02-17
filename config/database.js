@@ -7,6 +7,7 @@ const connectDB = async () => {
         
         // console.log('process.env.MONGO_URI:', process.env.MONGO_URI);
         const connex = await mongoose.connect(process.env.MONGO_URI, {})
+        console.log('URI de conexión:', process.env.MONGO_URI);
         console.log('MongoDB connected: ', connex.connection.host);
 
         //Manejo de eventos de conexión
