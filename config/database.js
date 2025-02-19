@@ -45,7 +45,7 @@ const connectDB = async () => {
         } else if (ERROR_CREDENTIALS) {
             console.error('Error de Usuario o Contraseña, verficar credenciales.');
         } else if (NO_IP_AUTORIZADA_LISTA_BLANCA) {
-            console.error('❗⚠️ Posible IP no autorizada, Verifica la lista bla nca de MongoDB Atlas Netwokr Access');
+            console.error('❗⚠️ Posible IP no autorizada, Verifica la lista blanca de MongoDB Atlas Netwokr Access');
             console.info('Tu IP actual necesita ser agregada a la whitelist')
 
              // Podemos intentar obtener la IP pública
