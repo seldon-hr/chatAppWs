@@ -96,7 +96,10 @@ userSchema.pre('save', async function(next){
 
 //Método para comparar contraseñas
 userSchema.methods.comparePassword = async function(receivedPassword){
-   try {
+    console.log('contraseña recibida', receivedPassword)
+    try {
+        console.log('The entries', receivedPassword, this.password);
+        console.log('Answer of the method',  await (bcrypt.compare(receivedPassword, this.password)));
        return await bcrypt.compare(receivedPassword, this.password);
    } catch (error) {
        return false;
