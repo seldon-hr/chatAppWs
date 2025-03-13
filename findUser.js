@@ -3,6 +3,9 @@ const User = require('./models/User');
 const connectDB = require('./config/database');
 const dotenv = require('dotenv');
 
+const axios = require('axios');
+const API_URL = 'http://localhost:5000/api';
+
 dotenv.config();
 
 const findUserByUsername = async (username) => {
@@ -28,4 +31,27 @@ const findUserByUsername = async (username) => {
 };
 
 // Example usage// Example usage
-findUserByUsername('mattwalker');
+/* findUserByUsername('mattwalker'); */
+
+
+
+// Test de Login
+const getUsers = async () => {
+    try {
+        console.log('🚀 Iniciando prueba de getUsers\n');
+
+        const usersResponse = await axios.get(`${API_URL}/getUsers`);
+        
+
+        console.log('✅ Petición exitosa');
+        console.log('User:', usersResponse);
+
+        
+        
+    } catch (error) {
+        /* console.log(error.response); */
+        console.error('❌ Error code:', error.code);
+    }
+};
+
+getUsers();
