@@ -39,3 +39,40 @@ exports.getUserById = async (request, response) => {
         });
     }
 }    
+
+exports.getUsers = async (request, response) => {
+    console.log('Intentando inicializador...');
+    console.log(request);
+    try {
+        let users = [];
+
+        Usuario.find({})
+            .then(usuarios => {
+                console.log(usuarios);
+            })
+            .catch(error => {
+                console.error('Error obteniendo desde MoongoDB', error);
+            })
+
+
+        if (users.length == 0) {
+            return response.status(401).json({
+                success: false,
+                messages: 'No se encontraron usuarios.'
+            })
+        }
+
+        response.status(200).json({
+            success: true,
+            users: users.toPublicJSON(),
+        })
+
+
+    } catch (error) {
+        console.error('Error en petición getUsers', error);
+        response.status(500).json({
+            success: false,
+            message: 'Error en el servidor',
+        });
+    }
+}
