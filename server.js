@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 //Routes
+//TODO: check this.
 app.use('/api/auth', require('./routes/auth.routes'));
 
 //Manejo de errores globales
@@ -29,6 +30,11 @@ app.use((error, req, res, next) => {
         message: error.message || 'Server Error',
         status: process.env.NODE_ENV === 'development' ? error : {},
     });
+});
+
+//Mostrar petición get básica del servidor que funciona adecuadamente.
+app.get('/', (req, res) => {
+    res.send('Chat App Ws is running');
 });
 
 
