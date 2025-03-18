@@ -40,11 +40,11 @@ const getUsers = async () => {
     try {
         console.log('🚀 Iniciando prueba de getUsers\n');
 
-        const usersResponse = await axios.post(`${API_URL}/getUsers`, {});
+        const usersResponse = await axios.post(`${API_URL}/auth/getUsers`, {});
         
 
         console.log('✅ Petición exitosa');
-        console.log('User:', usersResponse);
+        console.log('User:', usersResponse.data);
 
         
         
