@@ -42,13 +42,15 @@ exports.getUserById = async (request, response) => {
 
 exports.getUsers = async (request, response) => {
     console.log('Intentando inicializador...');
-    console.log(request);
+
     try {
         let users = [];
 
-        Usuario.find({})
+        await User.find({})
             .then(usuarios => {
-                console.log(usuarios);
+                // Assign the users from the database to the users array
+                users =  usuarios.map(usuario => usuario.toPublicJSON());
+                console.log('Usuarios obtenidos:', users.length);
             })
             .catch(error => {
                 console.error('Error obteniendo desde MoongoDB', error);
@@ -64,7 +66,7 @@ exports.getUsers = async (request, response) => {
 
         response.status(200).json({
             success: true,
-            users: users.toPublicJSON(),
+            body: users
         })
 
 
