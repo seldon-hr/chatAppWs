@@ -23,6 +23,7 @@ const readUsers = async () => {
         const listUsers = JSON.parse(jsonUsers);
 
         // Option 1: Using for...of loop (recommended for clarity)
+        /* Ventaja al usuar en vez de forEach. For Each no es asìncrono. */
         for (const user of listUsers) {
             console.log('Trying to register', user.username);
             await registerUser(user);
@@ -49,7 +50,7 @@ const registerUser = async (userPrototype) => {
         /* Todos los métodos que se emplean después de User, o de una instancia de esta
             puenden ser empleaos, así como este ejemplo. */
         const nextId = await User.generateNextId();
-        userPrototype.nextId = nextId;
+        userPrototype.id = nextId;
 
         //Crear un nuevo usuario
         const user = await User.create(userPrototype);
