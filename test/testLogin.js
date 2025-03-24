@@ -110,9 +110,9 @@ switch (operation) {
         break;
     default:
         console.log(`
-Por favor, especifica la operación:
-- Para login:   node testAuth.js login
-- Para logout:  node testAuth.js logout
-- Para limpiar: node testAuth.js cleanup
+                        Por favor, especifica la operación:
+                        - Para login:   node testAuth.js login
+                        - Para logout:  node testAuth.js logout
+                        - Para limpiar: node testAuth.js cleanup
         `);
 }

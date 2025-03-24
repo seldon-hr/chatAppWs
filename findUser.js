@@ -39,7 +39,7 @@ const findUserByUsername = async (username) => {
 const getUsers = async () => {
     try {
         console.log('🚀 Iniciando prueba de getUsers\n');
-
+        console.log('URL endpoint ->', `${API_URL}/auth/getUsers`)
         const usersResponse = await axios.post(`${API_URL}/auth/getUsers`, {});
         
 

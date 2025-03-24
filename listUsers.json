@@ -1,0 +1,507 @@
+[{
+  "_id": {
+    "$oid": "6723e3026de0641489eb3514"
+  },
+  "id": 2,
+  "name": "Daniel Romero",
+  "username": "antanymtz",
+  "email": "daniel.romero@techdev.io",
+  "address": {
+    "street": "Silicon Valley Boulevard",
+    "suite": "Suite 404",
+    "city": "San Francisco",
+    "zipcode": "94105-2023",
+    "geo": {
+      "lat": "37.7749",
+      "lng": "-122.4194"
+    }
+  },
+  "phone": "1-415-555-0123",
+  "website": "antanymtz.dev",
+  "company": {
+    "name": "TechForge Solutions",
+    "catchPhrase": "Innovating through code and creativity",
+    "bs": "develop cutting-edge web applications"
+  },
+  "avatar": "default-avatar.png",
+  "isOnline": false,
+  "password": "$2a$10$p6mSQy55sUh1gPOxvyChYO9ClP7F9RkZNJInD.BWdpZc22DH6fEla",
+  "lastSeen": {
+    "$date": "2024-10-31T20:37:10.124Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:22.030Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:37:10.130Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3026de0641489eb3517"
+  },
+  "id": 3,
+  "name": "Sam Altman",
+  "username": "sama",
+  "email": "sam.altman@openai.com",
+  "address": {
+    "street": "Mission Street",
+    "suite": "Floor 7",
+    "city": "San Francisco",
+    "zipcode": "94105",
+    "geo": {
+      "lat": "37.7858",
+      "lng": "-122.4064"
+    }
+  },
+  "phone": "1-415-555-0157",
+  "website": "sama.com",
+  "company": {
+    "name": "OpenAI",
+    "catchPhrase": "Creating safe artificial general intelligence",
+    "bs": "advance digital intelligence for humanity"
+  },
+  "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_%28cropped%29_%28cropped%29.jpg/220px-Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_%28cropped%29_%28cropped%29.jpg",
+  "isOnline": false,
+  "password": "$2a$10$ok5jT76GyrDKTJsNVTWMIOGSOnVNFDAusZ574NHLEwU884xA2aGuu",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:22.286Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:22.288Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:22.288Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3026de0641489eb351a"
+  },
+  "id": 4,
+  "name": "Andrew Huberman",
+  "username": "andrewHuberman",
+  "email": "andrew.huberman@stanford.edu",
+  "address": {
+    "street": "Campus Drive",
+    "suite": "Clark Center 200",
+    "city": "Stanford",
+    "zipcode": "94305",
+    "geo": {
+      "lat": "37.4275",
+      "lng": "-122.1697"
+    }
+  },
+  "phone": "1-650-555-0189",
+  "website": "hubermanlab.com",
+  "company": {
+    "name": "Stanford School of Medicine",
+    "catchPhrase": "Exploring neuroscience for better living",
+    "bs": "translate neuroscience into practical tools"
+  },
+  "avatar": "https://med.stanford.edu/services/api/cap/profiles/photocache.9622.jpg",
+  "isOnline": false,
+  "password": "$2a$10$6N2DEgvFLrfv0RUeG4Eu7.kNHRnXHspAYXYQ7w14uJ3MBfqvp8HB.",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:22.543Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:22.546Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:22.546Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3026de0641489eb351d"
+  },
+  "id": 5,
+  "name": "Denis Hassabis",
+  "username": "denisHassabis",
+  "email": "denis.hassabis@deepmind.com",
+  "address": {
+    "street": "Pancras Square",
+    "suite": "Building 6",
+    "city": "London",
+    "zipcode": "N1C 4AG",
+    "geo": {
+      "lat": "51.5327",
+      "lng": "-0.1257"
+    }
+  },
+  "phone": "+44-20-7123-4567",
+  "website": "deepmind.com",
+  "company": {
+    "name": "DeepMind",
+    "catchPhrase": "Solving intelligence to advance science",
+    "bs": "develop transformative AI solutions"
+  },
+  "avatar": "https://static.standard.co.uk/2024/10/09/10/24/Sir-Demis-Hassabis-jpeg.jpeg?width=1200&height=1200&fit=crop0",
+  "isOnline": false,
+  "password": "$2a$10$rVqXrXb0ElkwDs9O6czCoew5F2eV/xcy2qdTCQht7sKiDoVc4GY/m",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:22.821Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:22.823Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:22.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3036de0641489eb3520"
+  },
+  "id": 6,
+  "name": "Octavia Butler",
+  "username": "octaviaButler",
+  "email": "octavia.butler@writers.org",
+  "address": {
+    "street": "Pasadena Avenue",
+    "suite": "Unit 947",
+    "city": "Pasadena",
+    "zipcode": "91101",
+    "geo": {
+      "lat": "34.1478",
+      "lng": "-118.1445"
+    }
+  },
+  "phone": "1-626-555-0122",
+  "website": "octaviabutler.org",
+  "company": {
+    "name": "Science Fiction Writers Association",
+    "catchPhrase": "Imagining tomorrow's possibilities today",
+    "bs": "create visionary science fiction narratives"
+  },
+  "avatar": "https://static01.nyt.com/images/2021/02/21/books/review/15essentialoctaviabutler/15essentialoctaviabutler-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+  "isOnline": false,
+  "password": "$2a$10$xIPXHC1molYQVETdQNeN7uvN3U9YiyDgRB5q4vfTGgitWgaBidpWi",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:23.119Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:23.121Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:23.121Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3036de0641489eb3523"
+  },
+  "id": 7,
+  "name": "Carl Sagan",
+  "username": "carlSagan",
+  "email": "carl.sagan@cosmos.edu",
+  "address": {
+    "street": "Space View Drive",
+    "suite": "Observatory 42",
+    "city": "Ithaca",
+    "zipcode": "14850",
+    "geo": {
+      "lat": "42.4440",
+      "lng": "-76.5019"
+    }
+  },
+  "phone": "1-607-555-0242",
+  "website": "carlsagan.space",
+  "company": {
+    "name": "Cornell University",
+    "catchPhrase": "Billions and billions of possibilities",
+    "bs": "explore cosmic mysteries and promote science"
+  },
+  "avatar": "https://media.wired.com/photos/5a04a6d3306fba4ea295dfa0/4:3/w_1529,h_1147,c_limit/carlsagan-FA.jpg",
+  "isOnline": false,
+  "password": "$2a$10$/.WMmb.1P5wXxwk8m4oFjunsJAVobVXEubQGuj91vWhjTiVYX2/1C",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:23.527Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:23.527Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:23.527Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3036de0641489eb3526"
+  },
+  "id": 8,
+  "name": "Steve Brusatte",
+  "username": "steveBrusatte",
+  "email": "steve.brusatte@ed.ac.uk",
+  "address": {
+    "street": "Grant Institute",
+    "suite": "Room 303",
+    "city": "Edinburgh",
+    "zipcode": "EH9 3FE",
+    "geo": {
+      "lat": "55.9227",
+      "lng": "-3.1753"
+    }
+  },
+  "phone": "+44-131-555-0789",
+  "website": "stevebrusatte.uk",
+  "company": {
+    "name": "University of Edinburgh",
+    "catchPhrase": "Uncovering Earth's prehistoric secrets",
+    "bs": "research dinosaur evolution and paleobiology"
+  },
+  "avatar": "https://m.media-amazon.com/images/S/amzn-author-media-prod/4mb93mn7fsfqtfrkt7u7m2i438._SY450_CR114%2C0%2C450%2C450_.jpg",
+  "isOnline": false,
+  "password": "$2a$10$bE/mR90h.pzUf48p8hEsVOjJRzuGtyuC8vD1V7Xh4qorRMGJFTh/C",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:23.834Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:23.835Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:23.835Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3046de0641489eb3529"
+  },
+  "id": 9,
+  "name": "Rosario Castellanos",
+  "username": "rosarioCast",
+  "email": "rosario.castellanos@letras.unam.mx",
+  "address": {
+    "street": "Reforma Cultural",
+    "suite": "Piso 5",
+    "city": "Ciudad de México",
+    "zipcode": "06500",
+    "geo": {
+      "lat": "19.4326",
+      "lng": "-99.1332"
+    }
+  },
+  "phone": "+52-555-123-4567",
+  "website": "rosariocastellanos.org",
+  "company": {
+    "name": "Academia Mexicana de la Lengua",
+    "catchPhrase": "Voces que trascienden fronteras",
+    "bs": "promote Mexican literature and cultural identity"
+  },
+  "avatar": "https://mascultura.mx/wp-content/uploads/2024/06/RosarioCastellanos.jpg",
+  "isOnline": false,
+  "password": "$2a$10$apN5C/4EKgETIaUkFujswu8exl/dKROBe9JehcOw1MclbmCo/HXkW",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:24.139Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:24.140Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:24.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3046de0641489eb352c"
+  },
+  "id": 10,
+  "name": "Pavel Durov",
+  "username": "pavelDurov",
+  "email": "pavel.durov@telegram.org",
+  "address": {
+    "street": "Palm Jumeirah",
+    "suite": "Tower 23",
+    "city": "Dubai",
+    "zipcode": "12345",
+    "geo": {
+      "lat": "25.1124",
+      "lng": "55.1390"
+    }
+  },
+  "phone": "+971-4-555-0789",
+  "website": "telegram.org",
+  "company": {
+    "name": "Telegram Messenger",
+    "catchPhrase": "Freedom through encryption",
+    "bs": "develop secure communication platforms"
+  },
+  "avatar": "https://pbs.twimg.com/profile_images/658376777258151936/-Jz8l4Rr_400x400.jpg",
+  "isOnline": false,
+  "password": "$2a$10$kKHx8saNFYY6.3vQxvMCZOEAOadp5nZg5jqUUNxtKoVe.hfZS8ohG",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:24.446Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:24.448Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:24.448Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3046de0641489eb352f"
+  },
+  "id": 11,
+  "name": "Robert Sapolsky",
+  "username": "robertSapolsky",
+  "email": "robert.sapolsky@stanford.edu",
+  "address": {
+    "street": "Stanford Neuroscience",
+    "suite": "Gilbert Lab 450",
+    "city": "Stanford",
+    "zipcode": "94305",
+    "geo": {
+      "lat": "37.4275",
+      "lng": "-122.1697"
+    }
+  },
+  "phone": "1-650-555-0147",
+  "website": "robertsapolsky.org",
+  "company": {
+    "name": "Stanford University",
+    "catchPhrase": "Understanding stress and behavior",
+    "bs": "research neurological bases of behavior"
+  },
+  "avatar": "https://d28hgpri8am2if.cloudfront.net/author_images/5583_1888697.jpg",
+  "isOnline": false,
+  "password": "$2a$10$rjVJgfvL7RlB1CdqZHTA/uwMiFmMdu3s8bfkLO.1fhKGqclUlTi7e",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:24.769Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:24.770Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:24.770Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3056de0641489eb3532"
+  },
+  "id": 12,
+  "name": "Leonardo da Vinci",
+  "username": "leonardoDV",
+  "email": "leonardo@bottega.it",
+  "address": {
+    "street": "Via degli Artisti",
+    "suite": "Studio 1452",
+    "city": "Florence",
+    "zipcode": "50122",
+    "geo": {
+      "lat": "43.7696",
+      "lng": "11.2558"
+    }
+  },
+  "phone": "+39-055-555-1519",
+  "website": "leonardodavinci.art",
+  "company": {
+    "name": "Bottega Verrocchio",
+    "catchPhrase": "Where art meets science",
+    "bs": "innovate across multiple disciplines"
+  },
+  "avatar": "https://foroalfa.org/imagenes/ilustraciones/1989.jpg",
+  "isOnline": false,
+  "password": "$2a$10$LpMs3hV57aeC.N5nGmLNcOdGtabaf3SmZpZihcyekZ0MMAdgRnEaK",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:25.027Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:25.027Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:25.027Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6723e3056de0641489eb3535"
+  },
+  "id": 13,
+  "name": "Yuval Noah Harari",
+  "username": "yuvalHarari",
+  "email": "yuval.harari@huji.ac.il",
+  "address": {
+    "street": "Mount Scopus Campus",
+    "suite": "Department of History",
+    "city": "Jerusalem",
+    "zipcode": "91905",
+    "geo": {
+      "lat": "31.7925",
+      "lng": "35.2416"
+    }
+  },
+  "phone": "+972-2-555-0121",
+  "website": "ynharari.com",
+  "company": {
+    "name": "Hebrew University of Jerusalem",
+    "catchPhrase": "Understanding humanity's past and future",
+    "bs": "analyze historical patterns and future trends"
+  },
+  "avatar": "https://www.sitra.fi/app/uploads/2017/09/yuval_harari-Copy.jpg",
+  "isOnline": false,
+  "password": "$2a$10$R3dQ04Vbuwrc.oZlTMyf4.5yuefHaXz6W.hyHrDH7UWqhUtuA/X4K",
+  "lastSeen": {
+    "$date": "2024-10-31T20:05:25.277Z"
+  },
+  "createdAt": {
+    "$date": "2024-10-31T20:05:25.278Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-31T20:05:25.278Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b3b48f93f1ee5dd6dfaef1"
+  },
+  "id": 1,
+  "name": "Matt Walker",
+  "username": "mattwalker",
+  "email": "matt.walker@berkeley.edu",
+  "address": {
+    "street": "Center for Human Sleep Science",
+    "suite": "Room 3333",
+    "city": "Berkeley",
+    "zipcode": "94720",
+    "geo": {
+      "lat": "37.8719",
+      "lng": "-122.2585"
+    }
+  },
+  "phone": "1-510-555-0123",
+  "website": "sleepdiplomat.com",
+  "company": {
+    "name": "UC Berkeley",
+    "catchPhrase": "Unlocking the science of sleep",
+    "bs": "research sleep patterns and cognitive function"
+  },
+  "avatar": "https://m.media-amazon.com/images/S/amzn-author-media-prod/ia3edlhaah32226q310aa4vhal.jpg",
+  "isOnline": true,
+  "password": "$2a$10$6D09DsORsUb2MLaycyyPje9uUGvuJ/1avfP.HB9iEfXXcqGDYiWJ.",
+  "lastSeen": {
+    "$date": "2025-03-20T00:00:18.004Z"
+  },
+  "createdAt": {
+    "$date": "2025-02-17T22:13:35.718Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T00:00:18.005Z"
+  },
+  "__v": 0
+}]
