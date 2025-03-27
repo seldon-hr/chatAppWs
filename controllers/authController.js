@@ -26,6 +26,7 @@ exports.login = async (request, response) => {
         //Validar que el usuario exista
         if (!user) {
             return response.status(401).json({
+                code: -1,
                 success: false,
                 message: 'Usuario no encontrado',
             });
@@ -35,6 +36,7 @@ exports.login = async (request, response) => {
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
             return response.status(401).json({
+                code: -2,
                 success: false,
                 message: 'Contraseña incorrecta',
             });
