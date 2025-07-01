@@ -37,6 +37,21 @@ const Channel = require('../models/Channel');
 // }
 
 
+
+/* Create Channel */
+exports.saveChannel = async (channelPrototype) => { 
+    const { userId, name } = channelPrototype;
+    console.log(`Creando Canal: ${name} by ${userId}` );
+    
+    try {
+        const channel = await Channel.create(channelPrototype);
+        console.log(`Channel ${channel.toPublicJSON().name} was created `);
+    } catch (error) {
+        console.log(`Error al guardar el canal`, error);
+    }
+}
+
+
 /* Get Channels by user */
 exports.getChannelsByUser = async (request, response) => {
     console.log(`Búsqueda de canales para el usuarios ${request.body._id}`);
