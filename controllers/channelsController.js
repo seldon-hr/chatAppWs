@@ -1,55 +1,57 @@
-/* Get Channels */
-exports.getChannels = async (request, response) => {
-    console.log('Obtener Canales');
-    try {
-        let channels = [];
-        /* TODO: Crear estructura de Canal */
-        await Canal.find({})
-            .then(canales => {
-                channels = canales.map(canal => canal.toPublicJSON());
-                console.log(`Canales obtenidos:', ${channels.length})`);
-            })
-            .catch(error => {
-                console.log('Error desde MongoDB al recuperar los canales.', error);
-            })
+const Channel = require('../models/Channel');
+
+/* Get Public Channels */
+// exports.getChannels = async (request, response) => {
+//     console.log('Obtener Canales');
+//     try {
+//         let channels = [];
+//         /* TODO: Crear estructura de Channel */
+//         await Channel.find({})
+//             .then(canales => {
+//                 channels = canales.map(canal => canal.toPublicJSON());
+//                 console.log(`Canales obtenidos:', ${channels.length})`);
+//             })
+//             .catch(error => {
+//                 console.log('Error desde MongoDB al recuperar los canales.', error);
+//             })
         
-        if (channels.length == 0) {
-            return response.status(401).json({
-                success: false,
-                messages: 'No se encontraron canales.'
-            })
-        }
+//         if (channels.length == 0) {
+//             return response.status(401).json({
+//                 success: false,
+//                 messages: 'No se encontraron canales.'
+//             })
+//         }
         
-        response.status(200).json({
-            success: true,
-            body: channels
-        }) 
+//         response.status(200).json({
+//             success: true,
+//             body: channels
+//         }) 
            
-    } catch (error) {
-        console.log('Error al obtener los canales', error);
-        response.status(500).json({
-            success: false,
-            message: 'Error en el servidor',
-        });
-    }
-}
-
-
+//     } catch (error) {
+//         console.log('Error al obtener los canales', error);
+//         response.status(500).json({
+//             success: false,
+//             message: 'Error en el servidor',
+//         });
+//     }
+// }
 
 
 /* Get Channels by user */
 exports.getChannelsByUser = async (request, response) => {
-    console.log(`Bùsqueda de canales para el usuarios ${request.userId}`);
+    console.log(`Búsqueda de canales para el usuarios ${request.body._id}`);
+    const { _id } = request.body;
     try {
+        // Lista donde vamos a guardar los canales correspondientes al user.
         let channels = [];
-        /* TODO: Crear estructura de Canal */
-        await Canal.find({}) //Incorporar el body del usuario.
+        /* TODO: Crear estructura de Channel */
+        await Channel.findById({ _id }) //Incorporar el body del usuario.
             .then(canales => {
                 channels = canales.map(canal => canal.toPublicJSON());
                 console.log(`Canales obtenidos:', ${channels.length})`);
             })
             .catch(error => {
-                console.log('Error desde MongoDB al recuperar los canales.', error);
+                console.log(`Error desde MongoDB al recuperar los canales.`, error);
             })
         
         if (channels.length == 0) {
