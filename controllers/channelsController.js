@@ -14,18 +14,17 @@ exports.getChannels = async (request, response) => {
             })
         
         if (channels.length == 0) {
-        return response.status(401).json({
-            success: false,
-            messages: 'No se encontraron canales.'
-        })
+            return response.status(401).json({
+                success: false,
+                messages: 'No se encontraron canales.'
+            })
         }
-
+        
         response.status(200).json({
             success: true,
             body: channels
         }) 
            
-
     } catch (error) {
         console.log('Error al obtener los canales', error);
         response.status(500).json({
