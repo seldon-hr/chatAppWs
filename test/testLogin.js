@@ -33,7 +33,7 @@ const testLogin = async () => {
 
         const loginResponse = await axios.post(`${API_URL}/auth/login`, {
             username: 'mattwalker',
-            password: 'mattWalker'
+            password: 'mattwalker'
         });
         
 
