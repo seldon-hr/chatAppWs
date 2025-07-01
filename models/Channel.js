@@ -1,19 +1,17 @@
 //Modelando Canal
-const mongoose = requiere('mongoose');
+const mongoose = require('mongoose');
 
 const channelSchema = new mongoose.Schema({
     id: {
         type: Number,
         required: true,
-        unique: true,
+        unique: true
     },
     name: {
-        name: String,
-        required: true,
+        type: String,
+        required: true
     },
-    description: {
-        name: String,
-    },
+    description: String,
     createdBy: {
         type: Number,
         required: true,
@@ -21,7 +19,7 @@ const channelSchema = new mongoose.Schema({
     },
     isPrivate: {
         type: Boolean,
-        required: true,
+        required: true
     }
 }, {
     timestamps: true,

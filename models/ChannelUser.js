@@ -1,5 +1,5 @@
-//Modelando Canal
-const mongoose = requiere('mongoose');
+//Modelando CanalUser
+const mongoose = require('mongoose');
 
 const channelUserSchema = new mongoose.Schema({
     userId: {
