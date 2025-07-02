@@ -1,5 +1,5 @@
 const Channel = require('../models/Channel');
-
+const ChannelUser = require('../models/ChannelUser');
 /* Get Public Channels */
 // exports.getChannels = async (request, response) => {
 //     console.log('Obtener Canales');
@@ -54,13 +54,13 @@ exports.saveChannel = async (channelPrototype) => {
 
 /* Get Channels by user */
 exports.getChannelsByUser = async (request, response) => {
-    console.log(`Búsqueda de canales para el usuarios ${request.body._id}`);
-    const { _id } = request.body;
+    console.log(`Búsqueda de canales para el usuarios ${request.body.userId}`);
+    const { userId } = request.body;
     try {
         // Lista donde vamos a guardar los canales correspondientes al user.
         let channels = [];
         /* TODO: Crear estructura de Channel */
-        await Channel.findById({ _id }) //Incorporar el body del usuario.
+        await ChannelUser.populate({ userId }) //Usando Populate podemos regresar una lista de valore o un solo.
             .then(canales => {
                 channels = canales.map(canal => canal.toPublicJSON());
                 console.log(`Canales obtenidos:', ${channels.length})`);
