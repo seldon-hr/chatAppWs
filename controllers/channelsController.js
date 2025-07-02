@@ -57,23 +57,25 @@ exports.getChannelsByUser = async (request, response) => {
     console.log(`Búsqueda de canales para el usuarios ${request.body.userId}`);
     const { userId } = request.body;
     try {
-        // Lista donde vamos a guardar los canales correspondientes al user.
-        let channels = [];
-        /* TODO: Crear estructura de Channel */
-        await ChannelUser.populate({ userId }) //Usando Populate podemos regresar una lista de valores o un solo.
-            .then(canales => {
-                channels = canales.map(canal => canal.toPublicJSON());
-                console.log(`Canales obtenidos:', ${channels.length})`);
-            })
-            .catch(error => {
-                console.log(`Error desde MongoDB al recuperar los canales.`, error);
-            })
-        
-        if (channels.length == 0) {
-        return response.status(401).json({
-            success: false,
-            messages: 'No se encontraron canales.'
-        })
+        const channelsUsers = await ChannelUser.find({ userId }).populate('channelId');
+        console.log(`ChannelUsers encontrados: ${channelUsers.length}`);
+
+        const channels = channelsUsers
+            .filter(channelsUser => channelsUser.channelId)
+            .map(channelUser => ({
+                ...channelUser.channelId.toPublicJSON(), // Datos del canal
+                joinedAt: channelUser.joinedAt, // Datos de la relación
+                notificationsMute: channelUser.notificationsMute,
+                lastMessageReadId: channelUser.lastMessageReadId
+            }));
+
+        console.log(`Canales obtenidos: ${channels.length}`);
+
+        if (channels.length === 0) {
+            return response.status(404).json({
+                success: false,
+                message: 'No se encontraron canales.'
+            });
         }
 
         response.status(200).json({
