@@ -5,7 +5,7 @@ const connectDB = async () => {
         /* Al momento de realizar la conexión corroborar que se puede obtener acceso desde un ip disponible,
             de lo contrario checar en el módulo de mongo Atlas -> Network access */
         
-        // console.log('process.env.MONGO_URI:', process.env.MONGO_URI);
+        console.log('Conexión URI de la DB: process.env.MONGO_URI:', process.env.MONGO_URI);
         const connex = await mongoose.connect(process.env.MONGO_URI, {})
         console.log('URI de conexión:', process.env.MONGO_URI);
         console.log('MongoDB connected: ', connex.connection.host);
