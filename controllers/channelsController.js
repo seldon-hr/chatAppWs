@@ -60,7 +60,7 @@ exports.getChannelsByUser = async (request, response) => {
         // Lista donde vamos a guardar los canales correspondientes al user.
         let channels = [];
         /* TODO: Crear estructura de Channel */
-        await ChannelUser.populate({ userId }) //Usando Populate podemos regresar una lista de valore o un solo.
+        await ChannelUser.populate({ userId }) //Usando Populate podemos regresar una lista de valores o un solo.
             .then(canales => {
                 channels = canales.map(canal => canal.toPublicJSON());
                 console.log(`Canales obtenidos:', ${channels.length})`);
