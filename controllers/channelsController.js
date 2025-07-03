@@ -56,11 +56,44 @@ exports.saveChannel = async (channelPrototype) => {
 /* Get Channels by user */
 exports.getChannelsByUser = async (request, response) => {
     console.log('🔥 Endpoint getChannelsByUser alcanzado');
-    console.log(`Búsqueda de canales para el usuarios ${request.body.userId}`);
+    console.log(`Búsqueda de canales para el usuario: ${request.body.userId}`);
     const { userId } = request.body;
+    
+    // Debugging logs
+    console.log(`Tipo de userId recibido: ${typeof userId}`);
+    console.log(`UserId raw: ${userId}`);
+    console.log(`UserId convertido: ${new mongoose.Types.ObjectId(userId)}`);
+    
     try {
-        const channelsUsers = await ChannelUser.find({ userId: new mongoose.Types.ObjectId(userId) })/* .populate('channelId'); */
-        console.log(`ChannelUsers encontrados: ${channelsUsers.length}`);
+        // Primero, intenta buscar SIN conversión
+        const testQuery = await ChannelUser.find({ userId: userId });
+        console.log(`🔍 Búsqueda SIN conversión encontró: ${testQuery.length}`);
+        
+        // Prueba diferentes formas de buscar
+        const testQuery2 = await ChannelUser.find({ userId: new mongoose.Types.ObjectId(userId) });
+        console.log(`🔍 Búsqueda con new ObjectId encontró: ${testQuery2.length}`);
+        
+        // const testQuery3 = await ChannelUser.find({ userId: mongoose.Types.ObjectId(userId) });
+        // console.log(`🔍 Búsqueda sin new ObjectId encontró: ${testQuery3.length}`);
+        
+        // También prueba obtener TODOS los documentos para verificar
+        const allChannelUsers = await ChannelUser.find({});
+        console.log(`� Total documentos en ChannelUser: ${allChannelUsers.length}`);
+        if (allChannelUsers.length > 0) {
+            console.log(`� Primer documento:`, allChannelUsers[0]);
+            console.log(`📋 userId del primer documento:`, allChannelUsers[0].userId);
+            console.log(`� Tipo del userId:`, typeof allChannelUsers[0].userId);
+        }
+        
+        // Usar la consulta que funcione
+        let channelsUsers = [];
+        if (testQuery.length > 0) {
+            channelsUsers = await ChannelUser.find({ userId: userId }).populate('channelId');
+        } else if (testQuery2.length > 0) {
+            channelsUsers = await ChannelUser.find({ userId: new mongoose.Types.ObjectId(userId) }).populate('channelId');
+        }
+        
+        console.log(`� Búsqueda final encontró: ${channelsUsers.length}`);
 
         const channels = channelsUsers
             .filter(channelsUser => channelsUser.channelId)
