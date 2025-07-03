@@ -1,5 +1,6 @@
 const Channel = require('../models/Channel');
 const ChannelUser = require('../models/ChannelUser');
+const mongoose = require('mongoose');
 /* Get Public Channels */
 // exports.getChannels = async (request, response) => {
 //     console.log('Obtener Canales');
@@ -54,11 +55,12 @@ exports.saveChannel = async (channelPrototype) => {
 
 /* Get Channels by user */
 exports.getChannelsByUser = async (request, response) => {
+    console.log('🔥 Endpoint getChannelsByUser alcanzado');
     console.log(`Búsqueda de canales para el usuarios ${request.body.userId}`);
     const { userId } = request.body;
     try {
-        const channelsUsers = await ChannelUser.find({ userId }).populate('channelId');
-        console.log(`ChannelUsers encontrados: ${channelUsers.length}`);
+        const channelsUsers = await ChannelUser.find({ userId: new mongoose.Types.ObjectId(userId) })/* .populate('channelId'); */
+        console.log(`ChannelUsers encontrados: ${channelsUsers.length}`);
 
         const channels = channelsUsers
             .filter(channelsUser => channelsUser.channelId)

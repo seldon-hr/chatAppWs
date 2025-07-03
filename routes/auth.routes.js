@@ -12,7 +12,8 @@ router.post('/getUsers', getUsers);
 
 /* Rutas Privadas */
 router.post('/logout', protect, logout);
-router.post('/getChannels', protect, getChannelsByUser);
+router.post('/getChannelsByUser', protect, getChannelsByUser);
 
 /* Exportar rutas */
 module.exports = router;
+console.debug(`Rutas Actuales: ${router}`);
