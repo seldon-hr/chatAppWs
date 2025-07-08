@@ -27,6 +27,7 @@ const channelSchema = new mongoose.Schema({
 
 channelSchema.methods.toPublicJSON = function () {
     return {
+        _id: this._id,
         id: this.id,
         name: this.name,
         description: this.description,
