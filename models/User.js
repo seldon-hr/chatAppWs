@@ -109,6 +109,7 @@ userSchema.methods.comparePassword = async function(receivedPassword){
 //Método para obtener la información pública del usuario
 userSchema.methods.toPublicJSON = function() {
     return {
+        _id: this._id,
         id: this.id,
         name: this.name,
         username: this.username,
