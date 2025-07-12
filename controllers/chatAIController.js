@@ -1,8 +1,14 @@
 
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const dotenv = require('dotenv');
-dotenv.config({ path: '../.env'});
+
+/*  Variable solo para testing, descomentar cuando solo ejecutamos el uso de
+este archivo por node 'nombredodearchivo.js', así cargamos el env
+a process.env, de lo contrario cuando es el uso de la app, se cargan desde
+server.js
+ */
+/* const dotenv = require('dotenv');
+dotenv.config({ path: '../.env'}); */
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 console.log('API KEY', process.env.GEMINI_API_KEY);
@@ -28,5 +34,40 @@ async function getGeminiChat(prompt) {
         console.error('Error al conectar con Gemini ✨');
     }
 }
+/* TEsting */
+/* getGeminiChat(prompt); */
 
-getGeminiChat(prompt);
+// exports.getPreviousChats = async (request, response) => {
+//     /* ¿Checará en la db la conversación guardada? */
+
+// }
+
+
+
+exports.getChat = async (request, response) => {
+    try {
+        const { prompt } = request.body;
+        
+        const responseGemini = await getGeminiChat(prompt);
+
+        if (!responseGemini) {
+            return response.status(404).json({
+                success: false,
+                message: 'No se encontró respuesta de Gemini.'
+            });
+        }
+
+        response.status(200).json({
+            success: true,
+            body: responseGemini
+        }) 
+
+    }
+    catch (error) {
+        console.log('Error al obtener esta respuesta', error);
+        response.status(500).json({
+            success: false,
+            message: 'Error en el servidor',
+        });
+    }
+}
