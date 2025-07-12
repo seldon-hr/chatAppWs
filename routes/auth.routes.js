@@ -4,6 +4,8 @@ const { protect } = require('../middleware/authMiddleware');
 const { login, logout } = require('../controllers/authController');
 const { getUserById, getUsers } = require('../controllers/getUsersController');
 const { getChannelsByUser } = require('../controllers/channelsController');
+const { getChat } = require('../controllers/chatAIController');
+
 
 /* Rutas Públicas */
 router.post('/login', login);
