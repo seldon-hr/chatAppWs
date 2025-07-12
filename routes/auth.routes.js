@@ -14,6 +14,10 @@ router.post('/getUsers', getUsers);
 router.post('/logout', protect, logout);
 router.post('/getChannelsByUser', protect, getChannelsByUser);
 
+//Chat Gemini
+router.post('/getChat', protect, getChat);
+
+
 /* Exportar rutas */
 module.exports = router;
-console.debug(`Rutas Actuales: ${router}`);
+/* console.debug(`Rutas Actuales: ${router}`); */
