@@ -10,8 +10,9 @@ server.js
 const dotenv = require('dotenv');
 dotenv.config({ path: '../.env'});
 
-console.log('API KEY', process.env.GEMINI_API_KEY);
-console.log('AI MODEL', process.env.AI_MODEL);
+// IMPORTANTE: Si usas VPN (como Zepp), desconéctala antes de usar la API de Gemini
+console.log('API KEY:', process.env.GEMINI_API_KEY);
+console.log('AI MODEL:', process.env.AI_MODEL);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 
@@ -20,12 +21,12 @@ let newPrompt = '¿Cuáles serían los siguientes pasos?';
 
 async function getGeminiChat(prompt) {
     console.log('Starting request... 🚀')
-    const model = genAI.getGenerativeModel({ model: process.env.AI_MODEL });
-
+    
     try {
+        // ✅ Usar modelo válido
+        const model = genAI.getGenerativeModel({ model: process.env.AI_MODEL });
+        
         const result = await model.generateContent(prompt);
-        console.debug('Respuesta de Model', result);
-
         const response = await result.response;
         const textResponse = response.text();
         
@@ -33,7 +34,8 @@ async function getGeminiChat(prompt) {
         return textResponse;
         
     } catch (error) {
-        console.error('Error al conectar con Gemini ✨');
+        console.error('Error al conectar con Gemini:', error.message);
+        throw error;
     }
 }
 
@@ -76,7 +78,7 @@ async function getChatRun(newPrompt/* , previousChats */) {
             return text;
         }
     } catch (error) {
-        console.error('Error al conectar con Gemini ✨');
+        console.error('Error al conectar con Gemini ✨', error);
     }
 }
 
@@ -86,7 +88,7 @@ async function getChatRun(newPrompt/* , previousChats */) {
 
 
 /* TEsting */
-/* getGeminiChat(prompt); */
+getGeminiChat(prompt);
 
 // exports.getPreviousChats = async (request, response) => {
 //     /* ¿Checará en la db la conversación guardada? */
