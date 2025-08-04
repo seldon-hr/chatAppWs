@@ -82,7 +82,7 @@ async function getChatRun(newPrompt/* , previousChats */) {
     }
 }
 
-getChatRun('No entendí.');
+/* getChatRun('No entendí.'); */
 
 
 
