@@ -54,23 +54,23 @@ async function getChatRun(newPrompt/* , previousChats */) {
                 {
                     role: 'user',
                     parts: [{
-                        text: prompt
+                        text: 'Dime un chiste tecnológico.',
                     }]
                 },
                 {
                     role: 'model',
                     parts: [{
-                        text: 'Hola, Dan, me alegró, un gusto conocerte. Que Alegría que estes dando tus primeros pasos.',
+                        text: '¿Cómo se llama un programador que no comenta su código? Un analista de sistemas... porque nadie entiende lo que hace.',
                     }]
                 },
             ],
             generationConfig: {
-                maxOutputTokens: 100,
+                maxOutputTokens: 200,
             },
         });
 
-
-        const result = await model.generateContent(newPrompt);
+        //Add the object chat to the consult.
+        const result = await chat.sendMessage(newPrompt);
         const response = await result.response;
         if (response) {
             const text = response.text();
@@ -82,13 +82,13 @@ async function getChatRun(newPrompt/* , previousChats */) {
     }
 }
 
-/* getChatRun(newPrompt); */
+getChatRun('No entendí.');
 
 
 
 
 /* TEsting */
-getGeminiChat(prompt);
+/* getGeminiChat(prompt); */
 
 // exports.getPreviousChats = async (request, response) => {
 //     /* ¿Checará en la db la conversación guardada? */
