@@ -12,12 +12,15 @@ const { getMessagesByChannel, saveMessage } = require('../controllers/messagesCo
 router.post('/login', login);
 router.post('/getUserById', getUserById);
 router.post('/getUsers', getUsers);
-router.post('/getMessagesByChannel', getMessagesByChannel)
-router.post('/saveMessage', saveMessage)
+
 
 /* Rutas Privadas */
 router.post('/logout', protect, logout);
 router.post('/getChannelsByUser', protect, getChannelsByUser);
+
+//Messages
+router.post('/getMessagesByChannel', protect, getMessagesByChannel)
+router.post('/saveMessage', protect, saveMessage)
 
 //Chat Gemini
 router.post('/getChat', protect, getChat);
