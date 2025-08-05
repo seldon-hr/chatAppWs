@@ -24,3 +24,28 @@ exports.getMessagesByChannel = async (request, response) => {
         });
     }
 }
+
+/* Create Message into de Channel */
+exports.saveMessage = async (request, response) => {
+    const messageItem = request.body;
+
+
+    //Procesar previamente la lógica del mensaje para guardar este.
+    try {
+        const newMessage = await Message.create(messageItem);
+        console.debug(`Message was created ${newMessage}`);
+
+        // ✅ Añadir: Es importante enviar una respuesta al cliente cuando todo sale bien.
+        // Usamos 201 para indicar que un recurso fue creado exitosamente.
+        response.status(201).json({
+            success: true,
+            message: "The messages was sent."
+        });
+    } catch (error) {
+        console.log('Error al guardar el mensaje.', error);
+        response.status(500).json({
+            success: false,
+            message: 'Error en el servidor',
+        });
+    }
+}
